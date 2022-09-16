@@ -1,115 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Vote</title>
-    <meta name="description" content="Roxy" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1,
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge"
+		/>
+		<title>Vote</title>
+		<meta
+			name="description"
+			content="Roxy"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1,
             shrink-to-fit=no"
-    />
-    <!-- Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:300,400|Work+Sans:300,400,700"
-      rel="stylesheet"
-    />
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.min.css" />
-    <link
-      rel="stylesheet"
-      href="css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <script src="Js/main.js" type="module"></script>
-  </head>
-  <body data-spy="scroll" class="static-layout">
-    <nav>
-      <div class="icon">
-        <a href="#"
-          ><img
-            src="img/ryan.png"
-            style="opacity: 1"
-            height="50"
-            width="60"
-            alt=""
-        /></a>
-      </div>
-      <div class="open_Menu">
-        <i style="color: rgba(0, 0, 0, 0.4)" class="fas fa-bars"></i>
-      </div>
-      <ul class="main_Menu">
-        <li><button id="thm-switch">switch theme</button></li>
-        <div class="close_Menu">
-          <i style="color: white" class="fas fa-times"></i>
-        </div>
-      </ul>
-    </nav>
-    <div class="voteBox">
-      <div class="heading">
-        <h1
-          style="
-            margin-top: 10px;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-          "
-        >
-          Vote!<br />
-        </h1>
-      </div>
-      <div class="mainBox">
-        <div
-          id="post"
-          class="post"
-          style="
-            color: white;
-            text-align: center;
-            margin-top: 5px;
-            font-weight: 400;
-          "
-        >
-          <h4 id="postVal">Prime Minister</h4>
-        </div>
-        <ul>
-          <input class="option" type="button" value="Kunal" text="Kunal"
-          name="check" onclick="this.style.backgroundColor = 'green';"">
-          <input
-            class="option"
-            type="button"
-            value="Shashwat"
-            text="Shashwat"
-            name="check"
-            onclick="this.style.backgroundColor = 'green';"
-          />
-        </ul>
-        <button id="countData">Vote!</button>
-      </div>
-    </div>
-    <div class="jumbotron d-flex align-items-center">
-      <div class="rectangle-1"></div>
-      <div class="rectangle-2"></div>
-      <div class="rectangle-transparent-1"></div>
-      <div class="rectangle-transparent-2"></div>
-      <div class="circle-1"></div>
-      <div class="circle-2"></div>
-      <div class="circle-3"></div>
-      <div class="triangle triangle-1">
-        <img src="img/obj_triangle.png" alt="" />
-      </div>
-      <div class="triangle triangle-2">
-        <img src="img/obj_triangle.png" alt="" />
-      </div>
-      <div class="triangle triangle-3">
-        <img src="img/obj_triangle.png" alt="" />
-      </div>
-      <div class="triangle triangle-4">
-        <img src="img/obj_triangle.png" alt="" />
-      </div>
-    </div>
-    <script src="Js/index.js"></script>
-  </body>
+		/>
+		<!-- Fonts -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Lato:300,400|Work+Sans:300,400,700"
+			rel="stylesheet"
+		/>
+		<!-- CSS -->
+		<link
+			rel="stylesheet"
+			href="css/style.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="css/all.css"
+			integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+			crossorigin="anonymous"
+		/>
+		<script
+			src="Js/main.js"
+			type="module"
+		></script>
+	</head>
+	<body
+		data-spy="scroll"
+		class="static-layout"
+	>
+		<nav>
+			<div class="icon">
+				<a href="#"
+					><img
+						src="img/ryan.png"
+						style="opacity: 1"
+						height="50"
+						width="60"
+						alt=""
+				/></a>
+			</div>
+			<div class="open_Menu">
+				<i
+					style="color: rgba(0, 0, 0, 0.4)"
+					class="fas fa-bars"
+				></i>
+			</div>
+			<ul class="main_Menu">
+				<li><button id="thm-switch">switch theme</button></li>
+				<div class="close_Menu">
+					<i
+						style="color: white"
+						class="fas fa-times"
+					></i>
+				</div>
+			</ul>
+		</nav>
+		<div class="voteBox">
+			<div class="heading">
+				<h1
+					style="
+						margin-top: 10px;
+						position: absolute;
+						left: 50%;
+						transform: translateX(-50%);
+						color: white;
+					"
+				>
+					Vote!<br />
+				</h1>
+			</div>
+			<div class="mainBox">
+				<div
+					id="post"
+					class="post"
+					style="
+						color: white;
+						text-align: center;
+						margin-top: 5px;
+						font-weight: 400;
+					"
+				>
+					<h4 id="postVal">Prime Minister</h4>
+				</div>
+				<ul>
+					<input class="option" type="button" value="Kunal" text="Kunal"
+					name="check" onclick="this.style.backgroundColor = 'green';"">
+					<input
+						class="option"
+						type="button"
+						value="Shashwat"
+						text="Shashwat"
+						name="check"
+						onclick="this.style.backgroundColor = 'green';"
+					/>
+				</ul>
+				<button id="countData">Vote!</button>
+			</div>
+		</div>
+		<div class="jumbotron d-flex align-items-center">
+			<div class="rectangle-1"></div>
+			<div class="rectangle-2"></div>
+			<div class="rectangle-transparent-1"></div>
+			<div class="rectangle-transparent-2"></div>
+			<div class="circle-1"></div>
+			<div class="circle-2"></div>
+			<div class="circle-3"></div>
+			<div class="triangle triangle-1">
+				<img
+					src="img/obj_triangle.png"
+					alt=""
+				/>
+			</div>
+			<div class="triangle triangle-2">
+				<img
+					src="img/obj_triangle.png"
+					alt=""
+				/>
+			</div>
+			<div class="triangle triangle-3">
+				<img
+					src="img/obj_triangle.png"
+					alt=""
+				/>
+			</div>
+			<div class="triangle triangle-4">
+				<img
+					src="img/obj_triangle.png"
+					alt=""
+				/>
+			</div>
+		</div>
+		<script src="Js/index.js"></script>
+	</body>
 </html>
