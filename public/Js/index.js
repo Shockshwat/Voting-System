@@ -32,7 +32,7 @@ if(document.querySelectorAll('input[type="checkbox":checked]' == true)){
 for(let checkbox of checkedI ){
    let arrData = checkbox.value;
    getData.push(arrData)
-   console.log(arrData)
+   console.log(getData)
 }
 }
 else{
