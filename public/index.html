@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +14,39 @@
     <script src="Js/main.js" type="module"></script>
 </head>
 <body data-spy="scroll" class="static-layout">
-</div> 	<div class="jumbotron d-flex align-items-center">
+  <nav>
+    <div class="icon"><a href="#"><img src="img/ryan.png" style="opacity: 1;" height="50" width="60" alt=""></a></div>
+    <div class="open_Menu">
+        <i style="color: rgba(0,0,0,0.4)" class="fas fa-bars"></i>
+    </div>
+    <ul class="main_Menu">
+        <li><a href="#">Home</a></li>
+        <li><button id="thm-switch">switch theme</button></li>
+    <div class="close_Menu">
+        <i style="color: white" class="fas fa-times"></i>
+    </div>
+    </ul>
+</nav>
+<div class="voteBox">
+    <div class="heading">
+        <h1 style="margin-top: 10px; position: absolute; left: 50%;transform: translateX(-50%); color: white;">
+            Vote!<br>
+        </h1>
+    </div>
+    <div class="mainBox">
+        <div id="post" class="post" style="color: white; text-align: center; margin-top: 5px; font-weight: 400;">
+        <h4 id="postVal">Prime Minister<h4>
+    </div>
+<ul>
+    <input class="input" type="checkbox" value="Kunal" text="Kunal" name="check" onclick="onlyOne(this)">
+<input class="input" type="checkbox" value="Shashwat" text="Shashwat" name="check" onclick="onlyOne(this)">
+<input class="input" type="checkbox" value="XYZ" text="XYZ" name="check" onclick="onlyOne(this)">
+<input class="input" type="checkbox" value="ABC" text="ABC" name="check" onclick="onlyOne(this)">
+</ul>
+    <button id="countData">Vote!</button>
+</div>
+</div>
+<div class="jumbotron d-flex align-items-center">
   <div class="rectangle-1"></div>
   <div class="rectangle-2"></div>
   <div class="rectangle-transparent-1"></div>
@@ -35,6 +66,6 @@
   <div class="triangle triangle-4">
   	<img src="img/obj_triangle.png" alt="">
   </div>
-</div>	
+</div>		
 </body>
 </html>
