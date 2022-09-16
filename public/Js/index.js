@@ -14,10 +14,7 @@ function show() {
 function close() {
   mainMenu.style.top = "100%";
 }
-const buttonSwitch = document.getElementById("thm-switch");
-buttonSwitch.addEventListener("click", function () {
-  document.body.classList.toggle("dark-theme");
-});
+
 function onlyOne(checkbox) {
   checkboxes.forEach((item) => {
     if (item !== checkbox) item.checked = false;
@@ -29,15 +26,15 @@ btnFetch.addEventListener("click", fetchFunc);
 function fetchFunc() {
   if (document.querySelectorAll('input[type="checkbox":checked]' == true)) {
     let checkedI = document.querySelectorAll('input[type="checkbox"]:checked');
-for(let checkbox of checkedI ){
-   let arrData = checkbox.value;
-   getData.push(arrData)
-   console.log(getData)
     for (let checkbox of checkedI) {
       let arrData = checkbox.value;
       getData.push(arrData);
-      console.log(arrData);
+      console.log(getData);
+      for (let checkbox of checkedI) {
+        let arrData = checkbox.value;
+        getData.push(arrData);
+        console.log(arrData);
+      }
     }
   }
-}
 }
