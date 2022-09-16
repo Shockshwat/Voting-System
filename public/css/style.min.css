@@ -204,9 +204,10 @@ nav .icon h1 {
 .voteBox .mainBox ul input {
   appearance: none;
   position: relative;
-  margin: 10px 80px 10px 0px;
-  width: 40px;
-  height: 40px;
+  margin: 10px 10px 10px 0px;
+  /* display: inline; */
+  width: auto;
+  height: auto;
   cursor: pointer;
   border-radius: 4px;
   border: 4px solid #16161614;
@@ -221,33 +222,33 @@ nav .icon h1 {
   outline: none;
   filter: none;
 }
-.voteBox .mainBox ul input:checked {
-  background: #11998e; /* fallback for old browsers */
+/* .voteBox .mainBox ul input:checked {
+  background: #11998e; 
   background: -webkit-linear-gradient(
     to bottom,
     #38ef7d,
     #11998e
-  ); /* Chrome 10-25, Safari 5.1-6 */
+  ); 
   background: linear-gradient(
     to bottom,
     #38ef7d,
     #11998e
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  ); 
   box-shadow: none;
   border: none;
   filter: none;
-}
+} */
 .voteBox .mainBox button {
-  width: 100px;
+  width: auto;
   height: auto;
-  margin-top: 10px;
+  margin: 10px;
   padding: 8px;
   outline: none;
   cursor: pointer;
   background: none;
   border-radius: 10px;
   border: 1px solid white;
-  color: white;
+  color: rgb(0, 0, 0);
   transition: 0.3s;
   filter: none;
 }
