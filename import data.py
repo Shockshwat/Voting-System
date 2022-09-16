@@ -36,7 +36,7 @@ def main():
                 return json.loads('{"%s":"%s"}' % (self.post, self.candidates))
 
         with open("Posts.txt", "r") as f:
-            with open("Data.json", "w+") as f1:
+            with open("public\Js\Data.json", "w+") as f1:
                 list_obj = {}
                 for i in f.readlines():
                     i = Post(f"{i}")
