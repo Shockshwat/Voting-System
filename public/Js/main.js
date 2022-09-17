@@ -3,6 +3,7 @@ cad2 = document.getElementById("cad2");
 cad1.addEventListener("click", active1);
 cad2.addEventListener("click", active2);
 document.getElementById("countData").addEventListener("click", senddata);
+
 let selected = null;
 function active1() {
 	if (cad1.style.backgroundColor === "green") {
