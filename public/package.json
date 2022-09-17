@@ -1,5 +1,22 @@
 {
+  "start": "node Js/app.js",
+  "dev": "nodemon Js/app.js",
   "dependencies": {
     "jquery": "^3.6.1"
+  },
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node Js/app.js",
+    "dev": "nodemon Js/app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
   }
 }
