@@ -34,7 +34,7 @@
 		/>
 	</head>
 	<body
-		class="static-layout"
+		class=""
 		data-spy="scroll"
 	>
 		<nav>
@@ -48,22 +48,14 @@
 						width="60"
 				/></a>
 			</div>
-			<div class="open_Menu">
-				<i
-					class="fas fa-bars"
-					style="color: rgba(0, 0, 0, 0.4)"
-				></i>
-			</div>
 			<ul class="main_Menu">
-				<li>
-					<button id="thm-switch">switch theme</button>
-				</li>
-				<div class="close_Menu">
-					<i
-						class="fas fa-times"
-						style="color: white"
-					></i>
-				</div>
+				<div class="btn-container">
+					<i class="fa fa-sun-o" aria-hidden="true"></i>
+						<label class="switch btn-color-mode-switch">
+									<input type="checkbox" name="color_mode" id="color_mode" value="1">
+									<label for="color_mode" data-on="Dark" data-off="Light" class="btn-color-mode-switch-inner"></label>
+							</label>
+						<i class="fa fa-moon-o" aria-hidden="true"></i>
 			</ul>
 		</nav>
 		<div class="voteBox">
@@ -101,6 +93,7 @@
 						type="button"
 						value="Kunal"
 						id="cad1"
+						style="color: white;"
 					/>
 					<input
 						class="option"
@@ -108,6 +101,7 @@
 						type="button"
 						value="Shashwat"
 						id="cad2"
+						style="color: white;"
 					/>
 				</ul>
 				<button id="countData">Vote!</button>
@@ -150,4 +144,20 @@
 		<script src="Js/main.js"></script>
 		<footer>Copyright &nbsp; All rights reserved</footer>
 	</body>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>$(document).ready(function() {
+	$("#color_mode").on("change", function () {
+			colorModePreview(this);
+	})
+});
+
+function colorModePreview(ele) {
+	if($(ele).prop("checked") == true){
+			$('body').addClass('dark-theme');
+			// $('body').removeClass('static-layout');
+	}
+	else if($(ele).prop("checked") == false){
+		$('body').removeClass('dark-theme');
+	}
+}</script>
 </html>
