@@ -1,3 +1,38 @@
 {
-    "python.formatting.provider": "black"
-}
+    "editor.colorDecorators": false,
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorStyle": "line-thin",
+    "editor.minimap.renderCharacters": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.renderWhitespace": "none",
+    "editor.scrollBeyondLastLine": false,
+    "editor.tabSize": 2,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "git.openDiffOnClick": false,
+    "html.format.wrapAttributes": "force-expand-multiline",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "javascript.validate.enable": true,
+    "search.searchOnTypeDebouncePeriod": 500,
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.settings.editor": "json",
+    "workbench.startupEditor": "none",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+  }
