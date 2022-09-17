@@ -7,18 +7,7 @@ let postVal = document.getElementById("postVal");
 let getData = [];
 // openMenu.addEventListener("click", show);
 // closeMenu.addEventListener("click", close);
-function show() {
-	mainMenu.style.display = "flex";
-	mainMenu.style.top = "0";
-}
-function close() {
-	mainMenu.style.top = "100%";
-}
 
-const buttonSwitch = document.getElementById("thm-switch");
-buttonSwitch.addEventListener("click", function () {
-	document.body.classList.toggle("dark-theme");
-});
 function onlyOne(checkbox) {
 	checkboxes.forEach((item) => {
 		if (item !== checkbox) item.checked = false;
