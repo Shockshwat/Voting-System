@@ -28,6 +28,9 @@ body.dark-theme .jumbotron:before {
 		#0f0c29
 	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+body.dark-theme #cad1, body.dark-theme #cad2{
+  background: #8a8a8a38;
+}
 body.dark-theme .rectangle-1 {
 	background: #536976; /* fallback for old browsers */
 	background: -webkit-linear-gradient(
@@ -191,7 +194,7 @@ nav .icon h1 {
 	size: 40px;
 }
 .voteBox .mainBox ul .option {
-	background-color: #8a8a8a38;
+	background: #5a5a5a38;
 	border-radius: 10px;
 	width: 200px;
 	height: auto;
