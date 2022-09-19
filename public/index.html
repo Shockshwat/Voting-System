@@ -1,162 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta
-			content="IE=edge"
-			http-equiv="X-UA-Compatible"
-		/>
-		<title>Vote</title>
-		<meta
-			content="Roxy"
-			name="description"
-		/>
-		<meta
-			content="width=device-width, initial-scale=1,
-            shrink-to-fit=no"
-			name="viewport"
-		/>
-		<!-- Fonts -->
-		<link
-			href="https://fonts.googleapis.com/css?family=Lato:300,400|Work+Sans:300,400,700"
-			rel="stylesheet"
-		/>
-		<!-- CSS -->
-		<link
-			href="css/style.min.css"
-			rel="stylesheet"
-		/>
-		<link
-			crossorigin="anonymous"
-			href="css/all.css"
-			integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-			rel="stylesheet"
-		/>
-	</head>
-	<body
-		class=""
-		data-spy="scroll"
-	>
-		<nav>
-			<div class="icon">
-				<a href="#"
-					><img
-						alt=""
-						height="50"
-						src="img/ryan.png"
-						style="opacity: 1"
-						width="60"
-				/></a>
-			</div>
-			<ul class="main_Menu">
-				<div class="btn-container">
-					<i class="fa fa-sun-o" aria-hidden="true"></i>
-						<label class="switch btn-color-mode-switch">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <title>Vote</title>
+    <meta content="Roxy" name="description" />
+    <meta content="width=device-width, initial-scale=1,
+            shrink-to-fit=no" name="viewport" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Work+Sans:300,400,700" rel="stylesheet" />
+    <!-- CSS -->
+    <link href="css/style.min.css" rel="stylesheet" />
+    <link crossorigin="anonymous" href="css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" rel="stylesheet" />
+</head>
+
+<body class="" data-spy="scroll">
+    <nav>
+        <div class="icon">
+            <a href="#"><img alt="" height="50" src="img/ryan.png" style="opacity: 1" width="60" /></a>
+        </div>
+        <ul class="main_Menu">
+            <div class="btn-container">
+                <i class="fa fa-sun-o" aria-hidden="true"></i>
+                <label class="switch btn-color-mode-switch">
 									<input type="checkbox" name="color_mode" id="color_mode" value="1">
 									<label for="color_mode" data-on="Dark" data-off="Light" class="btn-color-mode-switch-inner"></label>
-							</label>
-						<i class="fa fa-moon-o" aria-hidden="true"></i>
-			</ul>
-		</nav>
-		<div class="voteBox">
-			<div class="heading">
-				<h1
-					style="
+                </label>
+                <i class="fa fa-moon-o" aria-hidden="true"></i>
+        </ul>
+    </nav>
+    <div class="voteBox">
+        <div class="heading">
+            <h1 style="
 						margin-top: 10px;
 						position: absolute;
 						left: 50%;
 						transform: translateX(-50%);
 						color: white;
-					"
-				>
-					Vote!<br />
-				</h1>
-			</div>
-			<div class="mainBox">
-				<div
-					class="post"
-					id="post"
-					style="
+					">
+                Vote!<br />
+            </h1>
+        </div>
+        <div class="mainBox">
+            <div class="post" id="post" style="
 						color: white;
 						text-align: center;
 						margin-top: 5px;
 						font-weight: 400;
 						margin-bottom: 25px;
-					"
-				>
-					<h2 id="postVal">Prime Minister</h2>
-				</div>
-				<ul>
-					<input
-						class="option"
-						name="check"
-						type="button"
-						value="Kunal"
-						id="cad1"
-						style="color: white;"
-					/>
-					<input
-						class="option"
-						name="check"
-						type="button"
-						value="Shashwat"
-						id="cad2"
-						style="color: white;"
-					/>
-				</ul>
-				<button id="countData">Vote!</button>
-			</div>
-		</div>
-		<div class="jumbotron d-flex align-items-center">
-			<div class="rectangle-1"></div>
-			<div class="rectangle-2"></div>
-			<div class="rectangle-transparent-1"></div>
-			<div class="rectangle-transparent-2"></div>
-			<div class="circle-1"></div>
-			<div class="circle-2"></div>
-			<div class="circle-3"></div>
-			<div class="triangle triangle-1">
-				<img
-					alt=""
-					src="img/obj_triangle.png"
-				/>
-			</div>
-			<div class="triangle triangle-2">
-				<img
-					alt=""
-					src="img/obj_triangle.png"
-				/>
-			</div>
-			<div class="triangle triangle-3">
-				<img
-					alt=""
-					src="img/obj_triangle.png"
-				/>
-			</div>
-			<div class="triangle triangle-4">
-				<img
-					alt=""
-					src="img/obj_triangle.png"
-				/>
-			</div>
-		</div>
-		<script src="Js/main.js"></script>
-		<footer>Copyright &nbsp; All rights reserved</footer>
-	</body>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script>$(document).ready(function() {
-	$("#color_mode").on("change", function () {
-			colorModePreview(this);
-	})
-});
+					">
+                <h2 id="postVal">Prime Minister</h2>
+            </div>
+            <ul>
+                <input class="option" name="check" type="button" value="Kunal" id="cad1" style="color: white;" />
+                <input class="option" name="check" type="button" value="Shashwat" id="cad2" style="color: white;" />
+            </ul>
+            <p id="error_message" style="color:red;"></p>
+            <button id="countData">Vote!</button>
+        </div>
+    </div>
+    <div class="jumbotron d-flex align-items-center">
+        <div class="rectangle-1"></div>
+        <div class="rectangle-2"></div>
+        <div class="rectangle-transparent-1"></div>
+        <div class="rectangle-transparent-2"></div>
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+        <div class="circle-3"></div>
+        <div class="triangle triangle-1">
+            <img alt="" src="img/obj_triangle.png" />
+        </div>
+        <div class="triangle triangle-2">
+            <img alt="" src="img/obj_triangle.png" />
+        </div>
+        <div class="triangle triangle-3">
+            <img alt="" src="img/obj_triangle.png" />
+        </div>
+        <div class="triangle triangle-4">
+            <img alt="" src="img/obj_triangle.png" />
+        </div>
+    </div>
+    <script src="Js/main.js"></script>
+    <footer>Copyright &nbsp; This script was made by Shashwat Gautam & Kunal Mehta. Please do not reproduce without permission.</footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+        $("#color_mode").on("change", function() {
+            colorModePreview(this);
+        })
+    });
 
-function colorModePreview(ele) {
-	if($(ele).prop("checked") == true){
-			$('body').addClass('dark-theme');
-			// $('body').removeClass('static-layout');
-	}
-	else if($(ele).prop("checked") == false){
-		$('body').removeClass('dark-theme');
-	}
-}</script>
+    function colorModePreview(ele) {
+        if ($(ele).prop("checked") == true) {
+            $('body').addClass('dark-theme');
+            // $('body').removeClass('static-layout');
+        } else if ($(ele).prop("checked") == false) {
+            $('body').removeClass('dark-theme');
+        }
+    }
+</script>
+
 </html>
