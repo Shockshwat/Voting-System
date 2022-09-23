@@ -84,7 +84,7 @@
     <script src="Js/main.js"></script>
     <footer>Copyright &nbsp; This script was made by Shashwat Gautam & Kunal Mehta. Please do not reproduce without permission.</footer>
 </body>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="Js/jquery-3.4.1.min.js"></script>
 <script>
     $(document).ready(function() {
         $("#color_mode").on("change", function() {
@@ -95,7 +95,6 @@
     function colorModePreview(ele) {
         if ($(ele).prop("checked") == true) {
             $('body').addClass('dark-theme');
-            // $('body').removeClass('static-layout');
         } else if ($(ele).prop("checked") == false) {
             $('body').removeClass('dark-theme');
         }
