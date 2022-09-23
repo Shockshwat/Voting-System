@@ -57,6 +57,10 @@ body.dark-theme .rectangle-2 {
 		#5757b3
 	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+body.dark-theme nav{
+	background: #424242;
+}
+
 nav {
 	background: rgba(112, 112, 112, 0.123);
 	box-shadow: 0 25px 45px rgba(0, 0, 0, 0.4);
