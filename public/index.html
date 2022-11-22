@@ -122,7 +122,7 @@
             </ul>
             <p
                 id="error_message"
-                style="color:red;"
+                style="color:#f00000;font-size: 20px;font-weight: bold;"
             ></p>
             <button id="countData">Vote!</button>
         </div>
@@ -161,6 +161,7 @@
         </div>
     </div>
     <script src="Js/main.js"></script>
+    <script src="Js/limitations.js"></script>
     <footer>Copyright &nbsp; This script was made by Shashwat Gautam & Kunal Mehta. Please do not reproduce without
         permission.</footer>
 </body>
@@ -177,7 +178,7 @@
         if ($(ele).prop("checked") == true) {
             $('body').addClass('dark-theme');
             Rlogo.src = "img/ryan-drk.png";
-            
+
         } else if ($(ele).prop("checked") == false) {
             $('body').removeClass('dark-theme');
             Rlogo.src = "img/ryan.png";
