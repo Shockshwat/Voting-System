@@ -5,6 +5,7 @@ cad2.addEventListener("click", active2);
 document.getElementById("countData").addEventListener("click", senddata);
 
 let selected = null;
+const data = fetch("http://localhost:5000/");
 
 function active1() {
 	if (cad1.style.backgroundColor != "green") {
@@ -41,6 +42,6 @@ function update_data(data) {
 	// cad2.value = data[i[1]];
 	cad1.style.backgroundColor = "#8a8a8a38";
 	cad2.style.backgroundColor = "#8a8a8a38";
-	cad1.value = "your";
-	cad2.value = "mother";
+	cad1.value = "ABC";
+	cad2.value = "XYZ";
 }

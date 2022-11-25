@@ -47,8 +47,8 @@ def main():
 
         for i in progressbar.progressbar(range(100)):
             time.sleep(0.02)
-        print("Data exported successfully in Data.json\nExiting program safely")
-        time.sleep(2)
+        print("Data exported successfully in Data.json\nPress Enter to Quit...")
+        input()
     except Exception as e:
         print(e)
         time.sleep(4)

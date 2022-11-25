@@ -1,17 +1,15 @@
 // Requiring module
 const express = require("express");
-
+const fs = require("fs");
 // Creating express object
 const app = express();
 
 // Handling GET request
-app.get("/", (req, res) => {
-	res.send("A simple Node App is " + "running on this server");
-	res.end();
+app.listen(5000, () => {
+	console.log(`Server is up and running on 5000 ...`);
 });
 
-// Port Number
-const PORT = process.env.PORT || 5000;
-
-// Server Setup
-app.listen(PORT, console.log(`Server started on port ${PORT}`));
+app.get("/", (req, res) => {
+	let data = JSON.parse(fs.readFileSync("public\\Js\\Data.json"));
+	res.send(data);
+});
