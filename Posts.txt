@@ -1,2 +1,4 @@
 President
 Vice President
+Home Minister 
+IT Team

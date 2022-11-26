@@ -35,4 +35,5 @@
     "[typescript]": {
       "editor.defaultFormatter": "vscode.typescript-language-features"
     },
+    "python.formatting.provider": "black",
   }

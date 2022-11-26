@@ -1,7 +1,14 @@
+import webbrowser
 import os
-if(os.system("node -v").len() > 12):
-    print("Node.js is not installed")
-    print("Please install the bundled Node.js to run this application")
-    print("Press Enter to quit...")
-    input()
-    exit()
+
+from threading import Thread
+
+
+def main():
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    os.system("public\\Js\\app.exe")
+
+
+if __name__ == "__main__":
+    Thread(target=main).start()
+    webbrowser.open_new_tab("public\\index.html")

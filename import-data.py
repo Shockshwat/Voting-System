@@ -5,9 +5,9 @@ def main():
         import sys
         import progressbar
         import time
-        from tkinter.filedialog import askopenfile 
+        from tkinter.filedialog import askopenfile
 
-        os.chdir(os.path.dirname(sys.argv[0]))
+        os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
         class Candidate:
             def __init__(self, name):
@@ -36,7 +36,7 @@ def main():
 
                 return json.loads('{"%s":"%s"}' % (self.post, self.candidates))
 
-        with askopenfile(mode ='r', filetypes =[('Text Files', '*.txt')]) as f:
+        with askopenfile(mode="r", filetypes=[("Text Files", "*.txt")]) as f:
             with open("public\Js\Data.json", "w+") as f1:
                 list_obj = {}
                 for i in f.readlines():
@@ -49,6 +49,7 @@ def main():
             time.sleep(0.02)
         print("Data exported successfully in Data.json\nPress Enter to Quit...")
         input()
+
     except Exception as e:
         print(e)
         time.sleep(4)
@@ -57,4 +58,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

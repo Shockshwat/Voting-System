@@ -5,7 +5,9 @@ cad2.addEventListener("click", active2);
 document.getElementById("countData").addEventListener("click", senddata);
 
 let selected = null;
-const data = fetch("http://localhost:5000/");
+fetch("http://localhost:5000/", { mode: "no-cors" }).then((data) => {
+	console.log(data);
+});
 
 function active1() {
 	if (cad1.style.backgroundColor != "green") {
@@ -44,4 +46,10 @@ function update_data(data) {
 	cad2.style.backgroundColor = "#8a8a8a38";
 	cad1.value = "ABC";
 	cad2.value = "XYZ";
+}
+function httpGet(theUrl) {
+	var xmlHttp = new XMLHttpRequest();
+	xmlHttp.open("GET", theUrl, false); // false for synchronous request
+	xmlHttp.send(null);
+	return xmlHttp.responseText;
 }

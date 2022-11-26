@@ -11,5 +11,6 @@ app.listen(5000, () => {
 
 app.get("/", (req, res) => {
 	let data = JSON.parse(fs.readFileSync("public\\Js\\Data.json"));
-	res.send(data);
+	// res.writeHead(200, { "Content-Type": "application/json" });
+	res.send(JSON.stringify(data));
 });
