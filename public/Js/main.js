@@ -5,9 +5,6 @@ cad2.addEventListener("click", active2);
 document.getElementById("countData").addEventListener("click", senddata);
 
 let selected = null;
-fetch("http://localhost:5000/", { mode: "no-cors" }).then((data) => {
-	console.log(data);
-});
 
 function active1() {
 	if (cad1.style.backgroundColor != "green") {
@@ -47,9 +44,18 @@ function update_data(data) {
 	cad1.value = "ABC";
 	cad2.value = "XYZ";
 }
-function httpGet(theUrl) {
-	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open("GET", theUrl, false); // false for synchronous request
-	xmlHttp.send(null);
-	return xmlHttp.responseText;
-}
+var request = new XMLHttpRequest();
+request.open("GET", "http://localhost:5500/public/Data/Data.json", true);
+request.onload = function () {
+	// Begin accessing JSON data here
+	var data = JSON.parse(this.response);
+
+	if (request.status >= 200 && request.status < 400) {
+		console.log(data);
+		console.log("here");
+	} else {
+		// Handle errors
+		console.log("didnt work");
+	}
+};
+request.send();

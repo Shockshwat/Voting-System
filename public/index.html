@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="">
 
 <head>
     <meta charset="utf-8" />
@@ -175,11 +175,11 @@
         })
     });
     function colorModePreview(ele) {
-        if ($(ele).prop("checked") == true) {
+        if ($(ele).prop("checked") === true) {
             $('body').addClass('dark-theme');
             Rlogo.src = "img/ryan-drk.png";
 
-        } else if ($(ele).prop("checked") == false) {
+        } else if ($(ele).prop("checked") === false) {
             $('body').removeClass('dark-theme');
             Rlogo.src = "img/ryan.png";
         }
