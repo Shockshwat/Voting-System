@@ -25,6 +25,7 @@ def main():
                 Candidate2 = Candidate(
                     input(f"Enter the name of second candidate for the post {post}: ")
                 )
+                print("\n")
                 self.post = post
 
                 self.candidates = [
@@ -37,7 +38,7 @@ def main():
                 return json.loads('{"%s":"%s"}' % (self.post, self.candidates))
 
         with askopenfile(mode="r", filetypes=[("Text Files", "*.txt")]) as f:
-            with open("public\Js\Data.json", "w+") as f1:
+            with open("public\Data\Data.json", "w+") as f1:
                 list_obj = {}
                 for i in f.readlines():
                     i = Post(f"{i}")

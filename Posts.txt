@@ -1,4 +1,3 @@
-President
-Vice President
-Home Minister 
-IT Team
+Owner
+Admin
+Moderator

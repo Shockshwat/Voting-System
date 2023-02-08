@@ -1,1 +1,5 @@
-{"President": "['KUnal', 'Nsah']", "Vice President": "['aihsg', 'whigo']", "Home Minister": "['aihog', 'aijwoh']", "IT Team": "['wojau', 'allah']"}
+{
+	"Owner": "['ABC', 'XYZ']",
+	"Admin": "['What', 'Is']",
+	"Moderator": "['My', 'Name']"
+}

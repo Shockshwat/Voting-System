@@ -5,7 +5,7 @@ cad2.addEventListener("click", active2);
 document.getElementById("countData").addEventListener("click", senddata);
 
 let selected = null;
-
+let i = 0;
 function active1() {
 	if (cad1.style.backgroundColor != "green") {
 		cad1.style.backgroundColor = "green";
@@ -35,27 +35,25 @@ function senddata() {
 }
 
 function update_data(data) {
-	//file.write(data) (in Documents folder) please put respective JS here
-	// DATA will be the JSON.
-	// cad1.value = data[i[0]];
-	// cad2.value = data[i[1]];
 	cad1.style.backgroundColor = "#8a8a8a38";
 	cad2.style.backgroundColor = "#8a8a8a38";
-	cad1.value = "ABC";
-	cad2.value = "XYZ";
+	data = Object.values(data);
+	edit_data = data[0].split(",");
+	console.log(edit_data);
+	console.log(edit_data[0]);
+	console.log(edit_data[1]);
+	// edit_data = data[0].split(",");
+	// console.log(edit_data);
+	// console.log(data[i]);
+	// cad1.value = edit_data[0];
+	// cad2.value = edit_data[1];
+	i++;
 }
-var request = new XMLHttpRequest();
-request.open("GET", "http://localhost:5500/public/Data/Data.json", true);
-request.onload = function () {
-	// Begin accessing JSON data here
-	var data = JSON.parse(this.response);
-
-	if (request.status >= 200 && request.status < 400) {
-		console.log(data);
-		console.log("here");
-	} else {
-		// Handle errors
-		console.log("didnt work");
-	}
-};
-request.send();
+fetch("http://localhost:5500/public/Data/Data.json")
+	.then((response) => response.json())
+	.then((data) => {
+		data = Object.values(data);
+	})
+	.catch((err) => {
+		console.log("An error occurred.", err);
+	});
