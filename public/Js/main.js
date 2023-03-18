@@ -1,9 +1,10 @@
 // Get DOM elements
-const candidate1 = document.getElementById("candidate1");
-const candidate2 = document.getElementById("candidate2");
+const candidate1 = document.getElementById("cad1");
+const candidate2 = document.getElementById("cad2");
 const countDataBtn = document.getElementById("countData");
 const errorMessage = document.querySelector("#error_message");
-
+const apiUrl = "http://localhost:5500/public/Data/Data.json";
+let info;
 // Initialize variables
 let selectedCandidate = null;
 
@@ -32,23 +33,23 @@ function sendData() {
 	} else {
 		errorMessage.innerText = "";
 		console.log(selectedCandidate);
-		updateData(selectedCandidate);
+		updateData();
 		selectedCandidate = null;
 	}
 }
-
-// Define function to update candidate data
-function updateData(data) {
-	const [value1, value2] = data.split(",");
-	candidate1.style.backgroundColor = "#8a8a8a38";
-	candidate2.style.backgroundColor = "#8a8a8a38";
-	candidate1.value = value1.replace("[", "");
-	candidate2.value = value2;
-}
-
 // Load data from API
-const apiUrl = "http://localhost:5500/public/Data/Data.json";
+
 fetch(apiUrl)
 	.then((response) => response.json())
-	.then((data) => updateData(Object.values(data)[0]))
+	.then((data) => (info = Object.values(data)[0]))
 	.catch((err) => console.log("An error occurred.", err));
+
+// Define function to update candidate data
+function updateData() {
+	console.log(info);
+	const [value1, value2] = info.split(",");
+	candidate1.style.backgroundColor = "#8a8a8a38";
+	candidate2.style.backgroundColor = "#8a8a8a38";
+	candidate1.value = value1;
+	candidate2.value = value2;
+}

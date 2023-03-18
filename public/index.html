@@ -1,24 +1,20 @@
 <!DOCTYPE html>
-<html
-    lang="en"
-    xmlns=""
->
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
     <meta
-        content="IE=edge"
         http-equiv="X-UA-Compatible"
+        content="IE=edge"
     />
     <title>Vote</title>
     <meta
-        content="Roxy"
         name="description"
+        content="Roxy"
     />
     <meta
-        content="width=device-width, initial-scale=1,
-            shrink-to-fit=no"
         name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <!-- Fonts -->
     <link
@@ -65,7 +61,7 @@
                         name="color_mode"
                         id="color_mode"
                         value="1"
-                    >
+                    />
                     <label
                         for="color_mode"
                         data-on="Dark"
@@ -77,17 +73,12 @@
                     class="fa fa-moon-o"
                     aria-hidden="true"
                 ></i>
+            </div>
         </ul>
     </nav>
     <div class="voteBox">
         <div class="heading">
-            <h1 style="
-						margin-top: 10px;
-						position: absolute;
-						left: 50%;
-						transform: translateX(-50%);
-						color: white;
-					">
+            <h1 style="margin-top: 10px; position: absolute; left: 50%; transform: translateX(-50%); color: white;">
                 Vote!<br />
             </h1>
         </div>
@@ -95,33 +86,27 @@
             <div
                 class="post"
                 id="post"
-                style="
-						color: white;
-						text-align: center;
-						margin-top: 5px;
-						font-weight: 400;
-						margin-bottom: 25px;
-					"
+                style="color: white; text-align: center; margin-top: 5px; font-weight: 400; margin-bottom: 25px;"
             >
                 <h2 id="postVal">Prime Minister</h2>
             </div>
             <ul>
-                <input
+                <button
                     class="option"
                     name="check"
                     type="button"
                     value=""
                     id="cad1"
                     style="color: white;"
-                />
-                <input
+                ></button>
+                <button
                     class="option"
                     name="check"
                     type="button"
                     value=""
                     id="cad2"
                     style="color: white;"
-                />
+                ></button>
             </ul>
             <p
                 id="error_message"
@@ -138,55 +123,46 @@
         <div class="circle-1"></div>
         <div class="circle-2"></div>
         <div class="circle-3"></div>
-        <div class="triangle triangle-1">
-            <img
+        <div class="triangle triangle-1"><img
                 alt=""
                 src="img/obj_triangle.png"
-            />
-        </div>
-        <div class="triangle triangle-2">
-            <img
+            ></div>
+        <div class="triangle triangle-2"><img
                 alt=""
                 src="img/obj_triangle.png"
-            />
-        </div>
-        <div class="triangle triangle-3">
-            <img
+            ></div>
+        <div class="triangle triangle-3"><img
                 alt=""
                 src="img/obj_triangle.png"
-            />
-        </div>
-        <div class="triangle triangle-4">
-            <img
+            ></div>
+        <div class="triangle triangle-4"><img
                 alt=""
                 src="img/obj_triangle.png"
-            />
-        </div>
+            ></div>
     </div>
+    <script src="Js/jquery-3.4.1.min.js"></script>
     <script src="Js/main.js"></script>
     <script src="Js/limitations.js"></script>
-    <footer>Copyright &nbsp; This script was made by Shashwat Gautam & Kunal Mehta. Please do not reproduce without
-        permission.</footer>
-</body>
-<script src="Js/jquery-3.4.1.min.js"></script>
-<script>
-    let Rlogo = document.getElementById('Ryanlogo');
-    console.log(Rlogo.src)
-    $(document).ready(function () {
-        $("#color_mode").on("change", function () {
-            colorModePreview(this);
-        })
-    });
-    function colorModePreview(ele) {
-        if ($(ele).prop("checked") === true) {
-            $('body').addClass('dark-theme');
-            Rlogo.src = "img/ryan-drk.png";
-
-        } else if ($(ele).prop("checked") === false) {
-            $('body').removeClass('dark-theme');
-            Rlogo.src = "img/ryan.png";
+    <script>
+        let Rlogo = document.getElementById('Ryanlogo');
+        $(document).ready(function () {
+            $("#color_mode").on("change", function () {
+                colorModePreview(this);
+            })
+        });
+        function colorModePreview(ele) {
+            if ($(ele).prop("checked") === true) {
+                $('body').addClass('dark-theme');
+                Rlogo.src = "img/ryan-drk.png";
+            } else if ($(ele).prop("checked") === false) {
+                $('body').removeClass('dark-theme');
+                Rlogo.src = "img/ryan.png";
+            }
         }
-    }
-</script>
+    </script>
+    <footer>
+        <p>&copy; This script was made by Shashwat Gautam & Kunal Mehta. Please do not reproduce without permission.</p>
+    </footer>
+</body>
 
 </html>
