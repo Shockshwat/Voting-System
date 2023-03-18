@@ -1,59 +1,43 @@
-cad1 = document.getElementById("cad1");
-cad2 = document.getElementById("cad2");
-cad1.addEventListener("click", active1);
-cad2.addEventListener("click", active2);
-document.getElementById("countData").addEventListener("click", senddata);
+const cad1 = document.getElementById("cad1");
+const cad2 = document.getElementById("cad2");
+const countData = document.getElementById("countData");
+const errorMessage = document.querySelector("#error_message");
+const apiUrl = "http://localhost:5500/public/Data/Data.json";
 
 let selected = null;
-let i = 0;
-function active1() {
-	if (cad1.style.backgroundColor != "green") {
-		cad1.style.backgroundColor = "green";
-		cad2.style.backgroundColor = "#8a8a8a38";
-		selected = cad1.value;
+
+cad1.addEventListener("click", () => setActive(cad1, cad2, cad1.value));
+cad2.addEventListener("click", () => setActive(cad2, cad1, cad2.value));
+countData.addEventListener("click", sendData);
+
+function setActive(active, inactive, value) {
+	if (active.style.backgroundColor !== "green") {
+		active.style.backgroundColor = "green";
+		inactive.style.backgroundColor = "#8a8a8a38";
+		selected = value;
 	}
 }
 
-function active2() {
-	if (cad2.style.backgroundColor != "green") {
-		cad2.style.backgroundColor = "green";
-		cad1.style.backgroundColor = "#8a8a8a38";
-		selected = cad2.value;
-	}
-}
-
-function senddata() {
-	if (selected == null) {
-		document.getElementById("error_message").innerText =
-			"Please click on one candidate";
+function sendData() {
+	if (selected === null) {
+		errorMessage.innerText = "Please click on one candidate";
 	} else {
-		document.querySelector("#error_message").innerText = "";
+		errorMessage.innerText = "";
 		console.log(selected);
-		update_data(selected);
+		updateData(selected);
 		selected = null;
 	}
 }
 
-function update_data(data) {
+function updateData(data) {
+	const [value1, value2] = data.split(",");
 	cad1.style.backgroundColor = "#8a8a8a38";
 	cad2.style.backgroundColor = "#8a8a8a38";
-	data = Object.values(data);
-	edit_data = data[0].split(",");
-	console.log(edit_data);
-	console.log(edit_data[0]);
-	console.log(edit_data[1]);
-	// edit_data = data[0].split(",");
-	// console.log(edit_data);
-	// console.log(data[i]);
-	// cad1.value = edit_data[0];
-	// cad2.value = edit_data[1];
-	i++;
+	cad1.value = value1;
+	cad2.value = value2;
 }
-fetch("http://localhost:5500/public/Data/Data.json")
+
+fetch(apiUrl)
 	.then((response) => response.json())
-	.then((data) => {
-		data = Object.values(data);
-	})
-	.catch((err) => {
-		console.log("An error occurred.", err);
-	});
+	.then((data) => updateData(Object.values(data)[0]))
+	.catch((err) => console.log("An error occurred.", err));
