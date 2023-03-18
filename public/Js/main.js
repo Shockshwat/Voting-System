@@ -1,42 +1,53 @@
-const cad1 = document.getElementById("cad1");
-const cad2 = document.getElementById("cad2");
-const countData = document.getElementById("countData");
+// Get DOM elements
+const candidate1 = document.getElementById("candidate1");
+const candidate2 = document.getElementById("candidate2");
+const countDataBtn = document.getElementById("countData");
 const errorMessage = document.querySelector("#error_message");
-const apiUrl = "http://localhost:5500/public/Data/Data.json";
 
-let selected = null;
+// Initialize variables
+let selectedCandidate = null;
 
-cad1.addEventListener("click", () => setActive(cad1, cad2, cad1.value));
-cad2.addEventListener("click", () => setActive(cad2, cad1, cad2.value));
-countData.addEventListener("click", sendData);
+// Add event listeners
+candidate1.addEventListener("click", () =>
+	setActiveCandidate(candidate1, candidate2, candidate1.value)
+);
+candidate2.addEventListener("click", () =>
+	setActiveCandidate(candidate2, candidate1, candidate2.value)
+);
+countDataBtn.addEventListener("click", sendData);
 
-function setActive(active, inactive, value) {
+// Define helper function to set active candidate
+function setActiveCandidate(active, inactive, value) {
 	if (active.style.backgroundColor !== "green") {
 		active.style.backgroundColor = "green";
 		inactive.style.backgroundColor = "#8a8a8a38";
-		selected = value;
+		selectedCandidate = value;
 	}
 }
 
+// Define function to handle data submission
 function sendData() {
-	if (selected === null) {
+	if (selectedCandidate === null) {
 		errorMessage.innerText = "Please click on one candidate";
 	} else {
 		errorMessage.innerText = "";
-		console.log(selected);
-		updateData(selected);
-		selected = null;
+		console.log(selectedCandidate);
+		updateData(selectedCandidate);
+		selectedCandidate = null;
 	}
 }
 
+// Define function to update candidate data
 function updateData(data) {
 	const [value1, value2] = data.split(",");
-	cad1.style.backgroundColor = "#8a8a8a38";
-	cad2.style.backgroundColor = "#8a8a8a38";
-	cad1.value = value1;
-	cad2.value = value2;
+	candidate1.style.backgroundColor = "#8a8a8a38";
+	candidate2.style.backgroundColor = "#8a8a8a38";
+	candidate1.value = value1.replace("[", "");
+	candidate2.value = value2;
 }
 
+// Load data from API
+const apiUrl = "http://localhost:5500/public/Data/Data.json";
 fetch(apiUrl)
 	.then((response) => response.json())
 	.then((data) => updateData(Object.values(data)[0]))
