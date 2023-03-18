@@ -10,19 +10,19 @@ let selectedCandidate = null;
 
 // Add event listeners
 candidate1.addEventListener("click", () =>
-	setActiveCandidate(candidate1, candidate2, candidate1.value)
+	setActiveCandidate(candidate1, candidate2, candidate1.innerText)
 );
 candidate2.addEventListener("click", () =>
-	setActiveCandidate(candidate2, candidate1, candidate2.value)
+	setActiveCandidate(candidate2, candidate1, candidate2.innerText)
 );
 countDataBtn.addEventListener("click", sendData);
 
 // Define helper function to set active candidate
-function setActiveCandidate(active, inactive, value) {
+function setActiveCandidate(active, inactive, innerText) {
 	if (active.style.backgroundColor !== "green") {
 		active.style.backgroundColor = "green";
 		inactive.style.backgroundColor = "#8a8a8a38";
-		selectedCandidate = value;
+		selectedCandidate = innerText;
 	}
 }
 
@@ -50,6 +50,7 @@ function updateData() {
 	const [value1, value2] = info.split(",");
 	candidate1.style.backgroundColor = "#8a8a8a38";
 	candidate2.style.backgroundColor = "#8a8a8a38";
-	candidate1.value = value1;
-	candidate2.value = value2;
+	candidate1.innerText = value1;
+	candidate2.innerText = value2;
 }
+updateData();
