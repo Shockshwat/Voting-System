@@ -1,0 +1,41 @@
+[
+    {
+        "candidates": [
+            {
+                "name": "ABC",
+                "votes": 1
+            },
+            {
+                "name": "XYZ",
+                "votes": 0
+            }
+        ],
+        "post": "Owner"
+    },
+    {
+        "candidates": [
+            {
+                "name": "PQR",
+                "votes": 1
+            },
+            {
+                "name": "RST",
+                "votes": 0
+            }
+        ],
+        "post": "Admin"
+    },
+    {
+        "candidates": [
+            {
+                "name": "Water",
+                "votes": 0
+            },
+            {
+                "name": "Air",
+                "votes": 1
+            }
+        ],
+        "post": "Moderator"
+    }
+]

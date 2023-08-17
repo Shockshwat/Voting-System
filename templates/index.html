@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html
+    lang="en"
+    xmlns=""
+>
 
 <head>
     <meta charset="utf-8" />
     <meta
-        http-equiv="X-UA-Compatible"
         content="IE=edge"
+        http-equiv="X-UA-Compatible"
     />
     <title>Vote</title>
     <meta
-        name="description"
         content="Roxy"
+        name="description"
     />
     <meta
+        content="width=device-width, initial-scale=1,
+            shrink-to-fit=no"
         name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <!-- Fonts -->
     <link
@@ -23,13 +27,18 @@
     />
     <!-- CSS -->
     <link
-        href="css/style.min.css"
+        href="
+        {{
+        url_for('static',filename='css/style.min.css'
+        )
+        }}"
         rel="stylesheet"
+        type="text/css"
     />
     <link
         crossorigin="anonymous"
-        href="css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+        type="text/css"
+        href="{{url_for('static',filename='css/all.css')}}"
         rel="stylesheet"
     />
 </head>
@@ -44,7 +53,7 @@
                     id="Ryanlogo"
                     alt="logo"
                     height="60"
-                    src="img/ryan.png"
+                    src="{{url_for('static', filename='img/ryan.png')}}"
                     style="opacity: 1"
                     width="60"
                 /></a>
@@ -61,7 +70,7 @@
                         name="color_mode"
                         id="color_mode"
                         value="1"
-                    />
+                    >
                     <label
                         for="color_mode"
                         data-on="Dark"
@@ -73,12 +82,17 @@
                     class="fa fa-moon-o"
                     aria-hidden="true"
                 ></i>
-            </div>
         </ul>
     </nav>
     <div class="voteBox">
         <div class="heading">
-            <h1 style="margin-top: 10px; position: absolute; left: 50%; transform: translateX(-50%); color: white;">
+            <h1 style="
+						margin-top: 10px;
+						position: absolute;
+						left: 50%;
+						transform: translateX(-50%);
+						color: white;
+					">
                 Vote!<br />
             </h1>
         </div>
@@ -86,27 +100,33 @@
             <div
                 class="post"
                 id="post"
-                style="color: white; text-align: center; margin-top: 5px; font-weight: 400; margin-bottom: 25px;"
+                style="
+						color: white;
+						text-align: center;
+						margin-top: 5px;
+						font-weight: 400;
+						margin-bottom: 25px;
+					"
             >
-                <h2 id="postVal">Prime Minister</h2>
+                <h2 id="postVal"></h2>
             </div>
             <ul>
-                <button
+                <input
                     class="option"
                     name="check"
                     type="button"
-                    value="Hello"
+                    value=""
                     id="cad1"
                     style="color: white;"
-                ></button>
-                <button
+                />
+                <input
                     class="option"
                     name="check"
                     type="button"
                     value=""
                     id="cad2"
                     style="color: white;"
-                ></button>
+                />
             </ul>
             <p
                 id="error_message"
@@ -123,46 +143,56 @@
         <div class="circle-1"></div>
         <div class="circle-2"></div>
         <div class="circle-3"></div>
-        <div class="triangle triangle-1"><img
+        <div class="triangle triangle-1">
+            <img
                 alt=""
-                src="img/obj_triangle.png"
-            ></div>
-        <div class="triangle triangle-2"><img
+                src="{{url_for('static', filename='img/obj_triangle.png')}}"
+            />
+        </div>
+        <div class="triangle triangle-2">
+            <img
                 alt=""
-                src="img/obj_triangle.png"
-            ></div>
-        <div class="triangle triangle-3"><img
+                src="{{url_for('static', filename='img/obj_triangle.png')}}"
+            />
+        </div>
+        <div class="triangle triangle-3">
+            <img
                 alt=""
-                src="img/obj_triangle.png"
-            ></div>
-        <div class="triangle triangle-4"><img
+                src="{{url_for('static', filename='img/obj_triangle.png')}}"
+            />
+        </div>
+        <div class="triangle triangle-4">
+            <img
                 alt=""
-                src="img/obj_triangle.png"
-            ></div>
+                src="{{url_for('static', filename='img/obj_triangle.png')}}"
+            />
+        </div>
     </div>
-    <script src="Js/jquery-3.4.1.min.js"></script>
-    <script src="Js/main.js"></script>
-    <script src="Js/limitations.js"></script>
-    <script>
-        let Rlogo = document.getElementById('Ryanlogo');
-        $(document).ready(function () {
-            $("#color_mode").on("change", function () {
-                colorModePreview(this);
-            })
-        });
-        function colorModePreview(ele) {
-            if ($(ele).prop("checked") == true) {
-                $('body').addClass('dark-theme');
-                Rlogo.src = "img/ryan-drk.png";
-            } else if ($(ele).prop("checked") == false) {
-                $('body').removeClass('dark-theme');
-                Rlogo.src = "img/ryan.png";
-            }
-        }
-    </script>
-    <footer>
-        <p>&copy; This script was made by Shashwat Gautam & Kunal Mehta. Please do not reproduce without permission.</p>
-    </footer>
+    <script src="{{ url_for('static', filename='Js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='Js/limitations.js') }}"></script>
+    <footer>Copyright &nbsp; This script was made by Shashwat Gautam & Kunal Mehta. Please do not reproduce without
+        permission.</footer>
 </body>
+<script>
+    let Rlogo = document.getElementById('Ryanlogo');
+
+    document.addEventListener("DOMContentLoaded", function () {
+        let colorModeCheckbox = document.getElementById("color_mode");
+        colorModeCheckbox.addEventListener("change", function () {
+            colorModePreview(this);
+        });
+    });
+
+    function colorModePreview(ele) {
+        if (ele.checked) {
+            document.body.classList.add('dark-theme');
+            Rlogo.src = "img/ryan-drk.png";
+        } else {
+            document.body.classList.remove('dark-theme');
+            Rlogo.src = "img/ryan.png";
+        }
+    }
+
+</script>
 
 </html>
