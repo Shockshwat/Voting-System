@@ -50,10 +50,12 @@
     <nav>
         <div class="icon">
             <a href="#"><img
-                    id="Ryanlogo"
+                    id="nsutlogo"
                     alt="logo"
                     height="60"
-                    src="{{url_for('static', filename='img/ryan.png')}}"
+                    src="{{url_for('static', filename='img/nsut.png')}}"
+                    data-light="{{ url_for('static', filename='img/nsut.png') }}"
+                    data-dark="{{ url_for('static', filename='img/nsut.png') }}"
                     style="opacity: 1"
                     width="60"
                 /></a>
@@ -170,11 +172,9 @@
     </div>
     <script src="{{ url_for('static', filename='Js/main.js') }}"></script>
     <script src="{{ url_for('static', filename='Js/limitations.js') }}"></script>
-    <footer>Copyright &nbsp; This script was made by Shashwat Gautam & Kunal Mehta. Please do not reproduce without
-        permission.</footer>
 </body>
 <script>
-    let Rlogo = document.getElementById('Ryanlogo');
+    let Rlogo = document.getElementById('nsutlogo');
 
     document.addEventListener("DOMContentLoaded", function () {
         let colorModeCheckbox = document.getElementById("color_mode");
@@ -186,10 +186,10 @@
     function colorModePreview(ele) {
         if (ele.checked) {
             document.body.classList.add('dark-theme');
-            Rlogo.src = "img/ryan-drk.png";
+            Rlogo.src = Rlogo.dataset.dark;
         } else {
             document.body.classList.remove('dark-theme');
-            Rlogo.src = "img/ryan.png";
+            Rlogo.src = Rlogo.dataset.light;
         }
     }
 

@@ -1,41 +1,30 @@
 [
-    {
-        "candidates": [
-            {
-                "name": "ABC",
-                "votes": 1
-            },
-            {
-                "name": "XYZ",
-                "votes": 0
-            }
-        ],
-        "post": "Owner"
-    },
-    {
-        "candidates": [
-            {
-                "name": "PQR",
-                "votes": 1
-            },
-            {
-                "name": "RST",
-                "votes": 0
-            }
-        ],
-        "post": "Admin"
-    },
-    {
-        "candidates": [
-            {
-                "name": "Water",
-                "votes": 0
-            },
-            {
-                "name": "Air",
-                "votes": 1
-            }
-        ],
-        "post": "Moderator"
-    }
+  {
+    "post": "President",
+    "candidates": [
+      { "name": "Alice", "votes": 5 },
+      { "name": "Bob", "votes": 3 }
+    ]
+  },
+  {
+    "post": "Vice President",
+    "candidates": [
+      { "name": "Charlie", "votes": 2 },
+      { "name": "Dana", "votes": 4 }
+    ]
+  },
+  {
+    "post": "Secretary",
+    "candidates": [
+      { "name": "Eve", "votes": 1 },
+      { "name": "Frank", "votes": 0 }
+    ]
+  },
+  {
+    "post": "Treasurer",
+    "candidates": [
+      { "name": "Grace", "votes": 3 },
+      { "name": "Heidi", "votes": 2 }
+    ]
+  }
 ]

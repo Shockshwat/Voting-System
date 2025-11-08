@@ -1,21 +1,20 @@
 import json
-import progressbar
-import time
+from typing import Dict
 
 
-def get_results(json_filename):
-    with open(json_filename, "r") as json_file:
+def get_results(json_filename: str) -> Dict[str, str]:
+    """Compute winners per post from a data file."""
+    with open(json_filename, "r", encoding="utf-8") as json_file:
         data = json.load(json_file)
 
-    result_dict = {}
-
+    result_dict: Dict[str, str] = {}
     for entry in data:
         post = entry["post"]
         candidates = entry["candidates"]
-
-        # Find the candidate with the maximum votes
-        max_votes_candidate = max(candidates, key=lambda x: x["votes"])
-        result_dict[post] = max_votes_candidate["name"]
+        if not candidates:
+            continue
+        max_votes_candidate = max(candidates, key=lambda x: x.get("votes", 0))
+        result_dict[post] = max_votes_candidate.get("name", "")
 
     return result_dict
 
@@ -23,7 +22,8 @@ def get_results(json_filename):
 from openpyxl import Workbook
 
 
-def create_excel(results):
+def create_excel(results: Dict[str, str], excel_filename: str = "results.xlsx") -> str:
+    """Create an Excel file from results and return the filename."""
     workbook = Workbook()
     sheet = workbook.active
 
@@ -36,14 +36,13 @@ def create_excel(results):
         sheet.cell(row=row, column=2, value=candidate)
         row += 1
 
-    excel_filename = "results.xlsx"
     workbook.save(excel_filename)
-    print(f"Results saved to {excel_filename}")
+    return excel_filename
 
 
 if __name__ == "__main__":
+    # Simple CLI usage without progress bars
     json_filename = "templates/Data/Data.json"
     results = get_results(json_filename)
-    for i in progressbar.progressbar(range(100)):
-        time.sleep(0.02)
-    create_excel(results)
+    outfile = create_excel(results)
+    print(f"Results saved to {outfile}")

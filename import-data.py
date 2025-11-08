@@ -1,11 +1,12 @@
 import json
 import os
-import sys
 import progressbar
 import time
 from tkinter.filedialog import askopenfile
 
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+# Always work relative to this script
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+os.chdir(BASE_DIR)
 
 
 class Candidate:
@@ -36,16 +37,21 @@ class Post:
         return {"post": self.post, "candidates": self.candidates}
 
 
-with askopenfile(mode="r", filetypes=[("Text Files", "*.txt")]) as f:
-    with open("public//Data//Data.json", "w+") as f1:
-        list_obj = []
-        for i in f.readlines():
-            i = Post(f"{i}")
-            list_obj.append(i.get_details())
-        json.dump(list_obj, f1, indent=2)
-print("Data imported successfully, Exporting in JSON format")
+# Ensure output folder exists and write to the path used by the web app
+output_path = os.path.join(BASE_DIR, "templates", "Data")
+os.makedirs(output_path, exist_ok=True)
+dest_file = os.path.join(output_path, "Data.json")
 
-for i in progressbar.progressbar(range(100)):
+with askopenfile(mode="r", filetypes=[("Text Files", "*.txt")]) as f:
+    with open(dest_file, "w+", encoding="utf-8") as f1:
+        list_obj = []
+        for line in f.readlines():
+            post = Post(f"{line}")
+            list_obj.append(post.get_details())
+        json.dump(list_obj, f1, indent=2)
+print("Data imported successfully, exporting in JSON format...")
+
+for _ in progressbar.progressbar(range(100)):
     time.sleep(0.02)
-print("Data exported successfully in Data.json\nPress Enter to Quit...")
+print("Data exported successfully to templates/Data/Data.json\nPress Enter to Quit...")
 input()
